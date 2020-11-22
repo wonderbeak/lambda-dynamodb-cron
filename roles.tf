@@ -19,8 +19,8 @@ EOF
 }
 
 resource "aws_iam_policy" "timestamp_policy" {
-  name        = "put_item_policy"
-  description = "Put Item in DynamoDB Policy for Lambda"
+  name        = "timestamp_policy"
+  description = "PutItem in DynamoDB Policy for Lambda"
 
   policy = <<EOF
 {
