@@ -1,3 +1,5 @@
+'use strict'
+
 const AWS = require('aws-sdk');
 const dynamoDb = new AWS.DynamoDB({region: 'eu-central-1'});
 
