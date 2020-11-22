@@ -36,7 +36,7 @@ resource "aws_iam_policy" "timestamp_policy" {
 EOF
 }
 
-resource "aws_iam_role_policy_attachment" "put_item_attach" {
+resource "aws_iam_role_policy_attachment" "timestamp_attach" {
   role       = aws_iam_role.timestamp_function.name
   policy_arn = aws_iam_policy.timestamp_policy.arn
 }

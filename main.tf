@@ -6,7 +6,7 @@ data "archive_file" "lambda_zip" {
 
 resource "aws_lambda_function" "timestamp_function" {
   filename         = "lambda.zip"
-  function_name    = "insert_lambda_function"
+  function_name    = "insert_timestamp_function"
   role             = aws_iam_role.timestamp_function.arn
   handler          = "index.handler"
   source_code_hash = data.archive_file.lambda_zip.output_base64sha256
@@ -28,7 +28,7 @@ resource "aws_dynamodb_table" "timestamps" {
 }
 
 resource "aws_cloudwatch_event_rule" "one_minute" {
-  name                = "timestamp-one-minute"
+  name                = "timestamp_one_minute"
   description         = "Put Timestamp in DynamoDB every 1 minute"
   schedule_expression = "rate(1 minute)"
 }
